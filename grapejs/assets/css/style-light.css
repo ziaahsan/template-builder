@@ -1,0 +1,171 @@
+html {
+	height: 100%!important;
+}
+
+body {
+	/*background-color: #f8f8f8!important;*/
+	min-height: 100%!important;
+	-webkit-font-smoothing: antialiased!important;
+}
+
+/* We can remove the border we've set at the beginnig */
+#gjs {
+	border: none;
+	height: 100vh!important;
+}
+/* Theming */
+
+/* Primary color for the background */
+.gjs-one-bg {
+  background-color: #f8f8f8;
+}
+
+/* Secondary color for the text color */
+.gjs-two-color {
+  color: #433e43;
+}
+
+/* Tertiary color for the background */
+.gjs-three-bg {
+  background-color: #494849;
+  color: white;
+}
+
+/* Quaternary color for the text color */
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #494849;
+}
+
+/*Template Canvas*/
+.gjs-cv-canvas {
+	width: 87%;
+	left: 13%;
+	z-index: 0;
+}
+/*Commands Bar*/
+.gjs-pn-commands {
+	width: 87%;
+	left: 13%;
+}
+/*View for left panel*/
+.gjs-pn-views {
+	width: 13%;
+	left: 0;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.gjs-pn-views-container {
+	left: 0;
+	width: 13%;
+	z-index: 0;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 10px 15px rgba(0,0,0,.08);
+}
+/*Options*/
+.gjs-pn-options {
+	right: 0;
+	padding: 3px;
+}
+/*Devices*/
+.gjs-pn-devices-c {
+	right: 42.5%;
+	padding: 3px;
+}
+/*Active pannel button*/
+.gjs-pn-btn.gjs-pn-active {
+	background-color: #ddd;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	box-shadow: none;
+}
+/*Block Width*/
+.gjs-block {
+	width: 100%;
+	height: auto;
+	min-height: auto;
+	border: none;
+	box-shadow: none;
+	text-align: left;
+	padding: 0;
+	background: transparent;
+}
+.gjs-block:hover {
+	box-shadow: none;
+	text-decoration: underline;
+}
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
+	background-color: #efefef;
+}
+.gjs-category-open, .gjs-sm-sector.gjs-sm-open, .gjs-sm-open.gjs-clm-tags, .gjs-block-category.gjs-open,
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
+	border-bottom: 1px solid #ddd;
+}
+.gjs-sm-sector .gjs-sm-field input, .gjs-clm-tags .gjs-sm-field input, .gjs-sm-sector .gjs-clm-field input,
+.gjs-clm-tags .gjs-clm-field input, .gjs-sm-sector .gjs-clm-select input, .gjs-clm-tags .gjs-clm-select input,
+.gjs-sm-sector .gjs-sm-field select, .gjs-clm-tags .gjs-sm-field select, .gjs-sm-sector .gjs-clm-field select,
+.gjs-clm-tags .gjs-clm-field select, .gjs-sm-sector .gjs-clm-select select, .gjs-clm-tags .gjs-clm-select select {
+	color: #222222;
+}
+.gjs-color-warn {
+	color: #f79c00;
+	font-weight: 500;
+}
+/*Tags input*/
+.gjs-field {
+    background-color: #eaeaea;
+    border: 1px solid #dddddd;
+    box-shadow: 0 2px 6px #dddddd;
+    border-radius: 3px;
+}
+.gjs-field-colorp {
+	border-left: none;
+	border: 1px solid #ddd;
+	width: 25px;
+}
+.gjs-field-color-picker {
+	background-color: transparent;
+	box-shadow: 0 5px 10px #bbb;
+}
+#gjs-clm-new {
+	color: #222222!important;
+}
+.gjs-radio-item:hover {
+    background: #dadada;
+    box-shadow: 0 6px 10px #cccccc inset;
+}
+.gjs-color-main, .gjs-off-prv, .gjs-sm-sector .gjs-sm-stack #gjs-sm-add, .gjs-clm-tags .gjs-sm-stack #gjs-sm-add {
+	color: #222222;
+	fill: #222222;
+}
+.gjs-sm-sector .gjs-sm-field.gjs-sm-composite, .gjs-clm-tags .gjs-sm-field.gjs-sm-composite, .gjs-sm-sector .gjs-sm-composite.gjs-clm-field,
+.gjs-clm-tags .gjs-sm-composite.gjs-clm-field, .gjs-sm-sector .gjs-sm-composite.gjs-clm-select, .gjs-clm-tags .gjs-sm-composite.gjs-clm-select,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer.gjs-sm-active, .gjs-clm-tags .gjs-sm-property .gjs-sm-layer.gjs-sm-active {
+	background-color: #fff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    /*box-shadow: 0 2px 6px #dddddd;*/
+}
+.gjs-clm-tags {
+	border-bottom: 1px solid #dddddd;
+	padding-bottom: 0px;
+}
+.gjs-clm-tag {
+	background-color: #3b97e3!important;
+}
+/*Arrow & Field*/
+.gjs-field .gjs-d-s-arrow,
+.gjs-field-arrow-u, .gjs-field-arrow-d,
+.gjs-field-arrow-u {
+	border-top-color: #222222;
+	border-bottom-color: #222222;
+}
+
+.gjs-traits-label {
+	border-bottom-color: #dddddd;
+}
+.gjs-field-color input {
+	font-weight: 500;
+    text-transform: capitalize;
+}

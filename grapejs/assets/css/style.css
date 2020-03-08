@@ -1,0 +1,260 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #ddd;
+	opacity: 1; /* Firefox */
+}
+
+html {
+	height: 100%!important;
+}
+
+body {
+	/*background-color: #f8f8f8!important;*/
+	min-height: 100%!important;
+	-webkit-font-smoothing: antialiased!important;
+}
+/*UIKit*/
+.uk-tooltip {
+	background-color: #f8fafb;
+	box-shadow: 0 4px 12px #080c10;
+	color: #000;
+	font-weight: 500;
+}
+/* We can remove the border we've set at the beginnig */
+#gjs {
+	border: none;
+	height: 100vh!important;
+}
+/* Theming */
+
+/* Primary color for the background */
+.gjs-one-bg {
+  background-color: #141D26;
+}
+
+/* Secondary color for the text color */
+.gjs-two-color {
+  color: #b6c6d8;
+}
+
+/* Tertiary color for the background */
+.gjs-three-bg {
+  background-color: #494849;
+  color: white;
+}
+
+/* Quaternary color for the text color */
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #494849;
+}
+
+/*Template Canvas*/
+.gjs-cv-canvas {
+	width: 84%;
+	left: 16%;
+	z-index: 0;
+}
+/*Commands Bar*/
+.gjs-pn-commands {
+	width: 84%;
+	height: 42px;
+	left: 16%;
+	border-bottom: 2px solid #0e151b;
+}
+/*View for left panel*/
+.gjs-pn-views {
+	width: 2%;
+	height: 100%;
+	left: 0;
+	border-right: 6px solid #192330;
+	background-color: #0e151b;
+	padding: 41px 0;
+}
+.gjs-pn-buttons {
+	display: block;
+}
+.gjs-pn-views > .gjs-pn-buttons > .gjs-pn-btn {
+	padding: 6px;
+	min-width: 100%;
+	height: 41px;
+    line-height: 38px;
+}
+.gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn {
+	padding: 6px 16px;
+	border-right: 1px solid #202e3c;
+}
+.gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn:last-child {
+	border-right: none;
+}
+.gjs-pn-views-container {
+	left: 2%;
+	width: 14%;
+	z-index: 0;
+	border-right: 1px solid #263647;
+	box-shadow: none;
+}
+/*Options*/
+.gjs-pn-options {
+    left: 2%;
+    padding: 3px;
+    max-width: 14%;
+    border-bottom: 2px solid #0e151b;
+    height: 42px;
+    line-height: 42px;
+}
+/*Devices*/
+.gjs-pn-devices-c {
+	right: 0;
+	padding: 3px;
+    height: 42px;
+    line-height: 42px;
+}
+/*Active pannel button*/
+.gjs-pn-btn.gjs-pn-active {
+	background-color: #192330;
+	border: none;
+	border-radius: 0px;
+	box-shadow: 0 5px 30px rgba(0,0,0,.3);
+}
+.gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn.gjs-pn-active {
+	background-color: transparent;
+}
+/*Block Width*/
+.gjs-block {
+	/*width: 100%;
+	height: auto;
+	min-height: auto;
+	border: none;
+	box-shadow: none;
+	text-align: left;
+	padding: 0;
+	background: transparent;*/
+	background-color: rgba(26, 37, 49, 0.9);
+	box-shadow: none;
+	border-radius: 0;
+	border: 1px solid #0e151b;
+	width: 33%;
+	margin: 0;
+}
+.gjs-block:hover {
+	background-color: #263647;
+	box-shadow: 0 4px 12px #0e151b;
+	text-decoration: none;
+}
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
+	background-color: #0e151b;
+}
+.gjs-category-open, .gjs-sm-sector.gjs-sm-open, .gjs-sm-open.gjs-clm-tags, .gjs-block-category.gjs-open,
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
+	border-bottom: 1px solid #1a2531;
+}
+.gjs-sm-sector .gjs-sm-field input, .gjs-clm-tags .gjs-sm-field input, .gjs-sm-sector .gjs-clm-field input,
+.gjs-clm-tags .gjs-clm-field input, .gjs-sm-sector .gjs-clm-select input, .gjs-clm-tags .gjs-clm-select input,
+.gjs-sm-sector .gjs-sm-field select, .gjs-clm-tags .gjs-sm-field select, .gjs-sm-sector .gjs-clm-field select,
+.gjs-clm-tags .gjs-clm-field select, .gjs-sm-sector .gjs-clm-select select, .gjs-clm-tags .gjs-clm-select select,
+.gjs-four-color, .gjs-four-color-h:hover {
+	color: #ffffff;
+}
+.gjs-color-warn {
+	color: #f79c00;
+	font-weight: 500;
+}
+/*Tags input*/
+.gjs-field {
+    background-color: #243447;
+    border: 1px solid #0e151b;
+    box-shadow: none;
+    border-radius: 5px;
+}
+.gjs-field-colorp {
+	border-left: none;
+	border: 1px solid #1a2531;
+	width: 25px;
+}
+.gjs-field-color-picker {
+	background-color: black;
+	box-shadow: 0 5px 10px #131b25;
+}
+#gjs-clm-new {
+	color: #ffffff!important;
+}
+.gjs-radio-item:hover {
+    background: #243447;
+    box-shadow: 0 6px 10px #243447 inset;
+}
+.gjs-color-main, .gjs-off-prv, .gjs-sm-sector .gjs-sm-stack #gjs-sm-add, .gjs-clm-tags .gjs-sm-stack #gjs-sm-add {
+	color: #ffffff;
+	fill: #ffffff;
+}
+.gjs-sm-sector .gjs-sm-field.gjs-sm-composite, .gjs-clm-tags .gjs-sm-field.gjs-sm-composite, .gjs-sm-sector .gjs-sm-composite.gjs-clm-field,
+.gjs-clm-tags .gjs-sm-composite.gjs-clm-field, .gjs-sm-sector .gjs-sm-composite.gjs-clm-select, .gjs-clm-tags .gjs-sm-composite.gjs-clm-select,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer.gjs-sm-active, .gjs-clm-tags .gjs-sm-property .gjs-sm-layer.gjs-sm-active {
+	background-color: #243447;
+    border: 1px solid #1a2531;
+    border-radius: 5px;
+    /*box-shadow: 0 2px 6px #dddddd;*/
+}
+.gjs-radio-item input:checked+.gjs-radio-item-label {
+	background-color: #0e151b;
+	border-radius: 2px;
+}
+.gjs-clm-tags {
+	border-bottom: 1px solid #1a2531;
+	padding-bottom: 0px;
+}
+.gjs-clm-tag {
+	background-color: #1a2531!important;
+}
+#gjs-clm-add-tag, .gjs-clm-tags-btn {
+	background-color: #3b97e3;
+	border: 1px solid #3b97e3;
+	color: #efefef;
+}
+/*Arrow & Field*/
+.gjs-field .gjs-d-s-arrow,
+.gjs-field-arrow-u, .gjs-field-arrow-d,
+.gjs-field-arrow-u {
+	border-top-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+
+.gjs-traits-label {
+	border-bottom-color: #1a2531;
+}
+.gjs-field-color input {
+	font-weight: 500;
+    text-transform: capitalize;
+}
+/*Code theeme*/
+.cm-s-hopscotch.CodeMirror,
+.cm-s-hopscotch .CodeMirror-gutters {
+	background-color: #141D26;
+}
+.gjs-title-tags {
+	font-size:10px;
+	color:#7f9bba;
+}
+.gjs-mdl-container {
+	background-color: rgba(8,12,16, 0.9);
+}
+.gjs-mdl-dialog {
+	max-width: 1200px;
+	height: 800px;
+	border-radius: 6px;
+}
+.gjs-cm-editor-c .CodeMirror {
+	height: 690px;
+}
+.gjs-cm-editor #gjs-cm-title {
+	margin-bottom: 10px;
+}
+.gjs-cm-editor#gjs-cm-htmlmixed #gjs-cm-title,
+.gjs-cm-editor#gjs-cm-css #gjs-cm-title {
+	font-weight: bold;
+}
+.gjs-export-dl > .gjs-cm-editor-c:nth-child(1) {
+	width: 70%;
+}
+.gjs-export-dl > .gjs-cm-editor-c:nth-child(2) {
+	width: 30%;
+}
