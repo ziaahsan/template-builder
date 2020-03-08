@@ -11,7 +11,6 @@
 	<script src="assets/js/grapes.min.js"></script>
 
 	<!-- Plugins -->
-	<!-- Insert here -->
 	
 	<!-- UIKit -->
 	<link rel="stylesheet" href="assets/uikit-3.3.3/css/uikit.min.css" />
@@ -37,6 +36,7 @@
 
 	 	const editor = grapesjs.init({
 	 		container : '#gjs',
+	 		height: '100vh',
 			canvas: {
 				styles: [
 					'http://192.168.2.31/template-builder/grapejs/assets/uikit-3.3.3/css/uikit.min.css',
@@ -48,15 +48,38 @@
 			},
 			plugins: [
 				editor => {
+					// Update the HTML code with the currently selected box
+			 		// editor.on('component:update', () => {
+				 	// 	let selectedComponent = editor.getSelected();
+				 	// 	if (selectedComponent == undefined) return;
+
+				 	// 	console.log(selectedComponent.toHTML());
+				 	// });
+
 					editor.getConfig().showDevices = 0;
 
 	 				let panelManager = editor.Panels;
 	 				panelManager.addPanel({ id: "devices-c" }).get("buttons").add([
-						{ id: "set-device-desktop", command: function(e) { return e.setDevice("Desktop") }, className: "fa fa-desktop", active: 1},
-						{ id: "set-device-tablet", command: function(e) { return e.setDevice("Tablet") }, className: "fa fa-tablet" },
-						{ id: "set-device-mobile", command: function(e) { return e.setDevice("Mobile portrait") }, className: "fa fa-mobile" },
+						{
+							id: "set-device-desktop",
+							command: function(e) { return e.setDevice("Desktop") },
+							className: "gjs-dekstop-device",
+							active: true,
+							label: `<span uk-icon="icon: desktop; ratio: 1" uk-tooltip="title: Desktop; pos: top"></span>`
+						},
+						{
+							id: "set-device-tablet",
+							command: function(e) { return e.setDevice("Tablet") },
+							className: "gjs-tablet-device",
+							label: `<span uk-icon="icon: tablet; ratio: 1" uk-tooltip="title: Tablet; pos: top"></span>`
+						},
+						{
+							id: "set-device-mobile",
+							command: function(e) { return e.setDevice("Mobile portrait") },
+							className: "gjs-mobile-portrait-device",
+							label: `<span uk-icon="icon: phone; ratio: 1" uk-tooltip="title: Phone; pos: top"></span>`
+						},
 					]);
-
 					panelManager.getButton('views', 'open-sm').set({
 						id: "open-sm",
 						className: 'gjs-pn-btn',

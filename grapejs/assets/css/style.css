@@ -22,7 +22,6 @@ body {
 /* We can remove the border we've set at the beginnig */
 #gjs {
 	border: none;
-	height: 100vh!important;
 }
 /* Theming */
 
@@ -80,7 +79,7 @@ body {
     line-height: 38px;
 }
 .gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn {
-	padding: 6px 16px;
+	padding: 6px 12px;
 	border-right: 1px solid #202e3c;
 }
 .gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn:last-child {
@@ -91,23 +90,31 @@ body {
 	width: 14%;
 	z-index: 0;
 	border-right: 1px solid #263647;
+	border-left: 2px solid #0e151b;
 	box-shadow: none;
+	height: calc(100% - 42px);
 }
 /*Options*/
 .gjs-pn-options {
     left: 2%;
     padding: 3px;
     max-width: 14%;
-    border-bottom: 2px solid #0e151b;
+    border-left: 2px solid #0e151b;
+    border-bottom: 1px solid #0e151b;
     height: 42px;
     line-height: 42px;
 }
 /*Devices*/
 .gjs-pn-devices-c {
-	right: 0;
-	padding: 3px;
+	left: 2%;
+    padding: 7px;
     height: 42px;
-    line-height: 42px;
+    line-height: 33px;
+    bottom: 0;
+    width: 14%;
+    border-top: 1px solid #0e151b;
+    border-left: 2px solid #0e151b;
+    box-shadow: -4px 0px 12px #0d131a;
 }
 /*Active pannel button*/
 .gjs-pn-btn.gjs-pn-active {
@@ -117,7 +124,8 @@ body {
 	box-shadow: 0 5px 30px rgba(0,0,0,.3);
 }
 .gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn.gjs-pn-active {
-	background-color: transparent;
+	background-color: #1a2531;
+    border-radius: 4px;
 }
 /*Block Width*/
 .gjs-block {
@@ -132,7 +140,7 @@ body {
 	background-color: rgba(26, 37, 49, 0.9);
 	box-shadow: none;
 	border-radius: 0;
-	border: 1px solid #0e151b;
+	border: 1px solid #131b25;
 	width: 33%;
 	margin: 0;
 }
