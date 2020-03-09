@@ -58,7 +58,9 @@ body {
 	width: 84%;
 	height: 42px;
 	left: 16%;
-	border-bottom: 2px solid #0e151b;
+	border-bottom: 1px solid #080c10;
+	background-color: #0e151b;
+	box-shadow: 0px 0px 12px #0d131a;
 }
 /*View for left panel*/
 .gjs-pn-views {
@@ -100,9 +102,11 @@ body {
     padding: 3px;
     max-width: 14%;
     border-left: 2px solid #0e151b;
-    border-bottom: 1px solid #0e151b;
+    border-bottom: 1px solid #080c10;
     height: 42px;
     line-height: 42px;
+    background-color: #0e151b;
+    box-shadow: 0px 0px 12px #0d131a;
 }
 /*Devices*/
 .gjs-pn-devices-c {
@@ -124,19 +128,12 @@ body {
 	box-shadow: 0 5px 30px rgba(0,0,0,.3);
 }
 .gjs-pn-options > .gjs-pn-buttons > .gjs-pn-btn.gjs-pn-active {
-	background-color: #1a2531;
+	background-color: #192330;
     border-radius: 4px;
+    color: #33dbba;
 }
 /*Block Width*/
 .gjs-block {
-	/*width: 100%;
-	height: auto;
-	min-height: auto;
-	border: none;
-	box-shadow: none;
-	text-align: left;
-	padding: 0;
-	background: transparent;*/
 	background-color: rgba(26, 37, 49, 0.9);
 	box-shadow: none;
 	border-radius: 0;
@@ -265,4 +262,23 @@ body {
 }
 .gjs-export-dl > .gjs-cm-editor-c:nth-child(2) {
 	width: 30%;
+}
+.gjs-sm-header,
+.gjs-trt-header {
+    font-weight: lighter;
+    padding: 10px;
+    font-size: 12px;
+    top: 45%;
+    position: absolute;
+    padding: 50px;
+    border-radius: 4px;
+}
+/*Toolbar*/
+.gjs-rte-toolbar {
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.gjs-sm-sector > .gjs-sm-properties,
+.gjs-block-category {
+	box-shadow: 0 0 12px #0d131a inset;
 }

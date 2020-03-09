@@ -262,7 +262,7 @@ blockManager.add('basic-hr', {
 				width="42" height="57"
 				viewBox="0 0 172 172"
 				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#b6c6d8"><path d="M8.6,83.85h154.8v2.15h-154.8z"></path></g></g></svg>
-			<div class="uk-text-normal uk-text-bold">Hr block</div>
+			<div class="uk-text-normal uk-text-bold">Hr Block</div>
 		</div>
 	`,
 	content: `<hr/>`,

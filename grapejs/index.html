@@ -9,15 +9,16 @@
 	<!-- GrapeJs -->
 	<link rel="stylesheet" href="assets/css/grapes.min.css">
 	<script src="assets/js/grapes.min.js"></script>
-
-	<!-- Plugins -->
 	
 	<!-- UIKit -->
 	<link rel="stylesheet" href="assets/uikit-3.3.3/css/uikit.min.css" />
     <script src="assets/uikit-3.3.3/js/uikit.min.js"></script>
     <script src="assets/uikit-3.3.3/js/uikit-icons.min.js"></script>
 
+    <!-- Style -->
 	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Plugins -->
 </head>
 <body>
 	<div id="gjs"></div>
@@ -57,7 +58,7 @@
 				 	// });
 
 					editor.getConfig().showDevices = 0;
-
+					
 	 				let panelManager = editor.Panels;
 	 				panelManager.addPanel({ id: "devices-c" }).get("buttons").add([
 						{
@@ -65,19 +66,19 @@
 							command: function(e) { return e.setDevice("Desktop") },
 							className: "gjs-dekstop-device",
 							active: true,
-							label: `<span uk-icon="icon: desktop; ratio: 1" uk-tooltip="title: Desktop; pos: top"></span>`
+							label: `<span uk-icon="icon: desktop; ratio: 1" uk-tooltip="title: Desktop Layout; pos: top"></span>`
 						},
 						{
 							id: "set-device-tablet",
 							command: function(e) { return e.setDevice("Tablet") },
 							className: "gjs-tablet-device",
-							label: `<span uk-icon="icon: tablet; ratio: 1" uk-tooltip="title: Tablet; pos: top"></span>`
+							label: `<span uk-icon="icon: tablet; ratio: 1" uk-tooltip="title: Tablet Layout; pos: top"></span>`
 						},
 						{
 							id: "set-device-mobile",
 							command: function(e) { return e.setDevice("Mobile portrait") },
 							className: "gjs-mobile-portrait-device",
-							label: `<span uk-icon="icon: phone; ratio: 1" uk-tooltip="title: Phone; pos: top"></span>`
+							label: `<span uk-icon="icon: phone; ratio: 1" uk-tooltip="title: Phone Layout; pos: top"></span>`
 						},
 					]);
 					panelManager.getButton('views', 'open-sm').set({
@@ -161,7 +162,5 @@
 	<!-- Blocks -->
 	<script src="editor/blocks/pages.js"></script>
 	<script src="editor/blocks/elements.js"></script>
-	<!-- <script src="blocks/uikit-elements.js"></script> -->
-	<!-- <script src="blocks/linkpreview-elements.js"></script> -->
 </body>
 </html>
