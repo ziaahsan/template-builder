@@ -19,6 +19,8 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<!-- Plugins -->
+	<script src="editor/plugins/custom-code-editor.js"></script>
+
 </head>
 <body>
 	<div id="gjs"></div>
@@ -48,18 +50,15 @@
 			 	]
 			},
 			plugins: [
+				'customCodeEditor',
 				editor => {
-					// Update the HTML code with the currently selected box
-			 		// editor.on('component:update', () => {
-				 	// 	let selectedComponent = editor.getSelected();
-				 	// 	if (selectedComponent == undefined) return;
-
-				 	// 	console.log(selectedComponent.toHTML());
-				 	// });
-
-					editor.getConfig().showDevices = 0;
-					
 	 				let panelManager = editor.Panels;
+	 				let domComponents = editor.DomComponents;
+
+					// Hide default devices
+					editor.getConfig().showDevices = 0;
+
+					// Device icons manager
 	 				panelManager.addPanel({ id: "devices-c" }).get("buttons").add([
 						{
 							id: "set-device-desktop",

@@ -1,6 +1,8 @@
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: #ddd;
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+	color: #88a7c1;
 	opacity: 1; /* Firefox */
+	text-transform: lowercase;
 }
 
 html {
@@ -248,7 +250,8 @@ body {
 	border-radius: 6px;
 }
 .gjs-cm-editor-c .CodeMirror {
-	height: 690px;
+	height: 650px;
+    margin-bottom: 5px;
 }
 .gjs-cm-editor #gjs-cm-title {
 	margin-bottom: 10px;
@@ -257,10 +260,10 @@ body {
 .gjs-cm-editor#gjs-cm-css #gjs-cm-title {
 	font-weight: bold;
 }
-.gjs-export-dl > .gjs-cm-editor-c:nth-child(1) {
+.gjs-cm-editor-c:nth-child(1) {
 	width: 70%;
 }
-.gjs-export-dl > .gjs-cm-editor-c:nth-child(2) {
+.gjs-cm-editor-c:nth-child(2) {
 	width: 30%;
 }
 .gjs-sm-header,
@@ -271,14 +274,24 @@ body {
     top: 45%;
     position: absolute;
     padding: 50px;
-    border-radius: 4px;
+    color: #9fb8cd;
 }
 /*Toolbar*/
 .gjs-rte-toolbar {
 	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
-
 .gjs-sm-sector > .gjs-sm-properties,
 .gjs-block-category {
 	box-shadow: 0 0 12px #0d131a inset;
+}
+/*Button*/
+.gjs-btn-prim {
+    background-color: #1e87f0;
+    border-radius: 4px;
+    color: hsla(0,0%,100%,.85)!important;
+    font-weight: 500;
+    text-transform: none;
+}
+.gjs-btn-prim:active {
+	background-color: #0e6ecd;
 }
