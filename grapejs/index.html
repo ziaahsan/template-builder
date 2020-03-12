@@ -20,11 +20,15 @@
 
 	<!-- Plugins -->
 	<script src="editor/plugins/custom-code-editor.js"></script>
+	<script src="editor/plugins/customize-devices.js"></script>
+	<script src="editor/plugins/customize-options.js"></script>
+	<script src="editor/plugins/customize-views.js"></script>
 
 </head>
 <body>
 	<div id="gjs"></div>
-	<!--  -->
+	
+	<!--Script  -->
 	<script type="text/javascript">
 		const categories = {
 	 		'layout': 'Layout <span class="gjs-title-tags">Elements</span>',
@@ -51,104 +55,10 @@
 			},
 			plugins: [
 				'customCodeEditor',
-				editor => {
-	 				let panelManager = editor.Panels;
-	 				let domComponents = editor.DomComponents;
-
-					// Hide default devices
-					editor.getConfig().showDevices = 0;
-
-					// Device icons manager
-	 				panelManager.addPanel({ id: "devices-c" }).get("buttons").add([
-						{
-							id: "set-device-desktop",
-							command: function(e) { return e.setDevice("Desktop") },
-							className: "gjs-dekstop-device",
-							active: true,
-							label: `<span uk-icon="icon: desktop; ratio: 1" uk-tooltip="title: Desktop Layout; pos: top"></span>`
-						},
-						{
-							id: "set-device-tablet",
-							command: function(e) { return e.setDevice("Tablet") },
-							className: "gjs-tablet-device",
-							label: `<span uk-icon="icon: tablet; ratio: 1" uk-tooltip="title: Tablet Layout; pos: top"></span>`
-						},
-						{
-							id: "set-device-mobile",
-							command: function(e) { return e.setDevice("Mobile portrait") },
-							className: "gjs-mobile-portrait-device",
-							label: `<span uk-icon="icon: phone; ratio: 1" uk-tooltip="title: Phone Layout; pos: top"></span>`
-						},
-					]);
-					panelManager.getButton('views', 'open-sm').set({
-						id: "open-sm",
-						className: 'gjs-pn-btn',
-						command: "open-sm",
-						active: true,
-						attributes: {
-							title: "Open Style Manager"
-						},
-						label: `<span uk-icon="paint-bucket" uk-tooltip="title: Customization; pos: right"></span>`
-					});
-					panelManager.getButton('views', 'open-tm').set({
-						id: "open-tm",
-						className: 'gjs-pn-btn',
-						command: "open-tm",
-						active: false,
-						attributes: {
-							title: "Open Settings"
-						},
-						label: `<span uk-icon="settings" uk-tooltip="title: Settings; pos: right"></span>`
-					});
-					panelManager.getButton('views', 'open-layers').set({
-						id: "open-layers",
-						className: 'gjs-pn-btn',
-						command: "open-layers",
-						active: false,
-						attributes: {
-							title: "Open Layers"
-						},
-						label: `<span uk-icon="menu" uk-tooltip="title: Layers; pos: right"></span>`
-					});
-					panelManager.getButton('views', 'open-blocks').set({
-						id: "open-blocks",
-						className: 'gjs-pn-btn',
-						command: "open-blocks",
-						active: false,
-						attributes: {
-							title: "Open Blocks"
-						},
-						label: `<span uk-icon="grid" uk-tooltip="title: Blocks; pos: right"></span>`
-					});
-					panelManager.getButton('options', 'sw-visibility').set({
-						id: "sw-visibility",
-						className: 'gjs-pn-btn',
-						command: "sw-visibility",
-						active: true,
-						label: `<span uk-icon="thumbnails" uk-tooltip="title: Guide Lines; pos: bottom"></span>`
-					});
-					panelManager.getButton('options', 'preview').set({
-						id: "preview",
-						className: 'gjs-pn-btn',
-						command: "preview",
-						active: false,
-						label: `<span uk-icon="push" uk-tooltip="title: Preview; pos: bottom"></span>`
-					});
-					panelManager.getButton('options', 'fullscreen').set({
-						id: "fullscreen",
-						className: 'gjs-pn-btn',
-						command: "fullscreen",
-						active: false,
-						label: `<span uk-icon="expand" uk-tooltip="title: Set Fullscreen; pos: bottom"></span>`
-					});
-					panelManager.getButton('options', 'export-template').set({
-						id: "export-template",
-						className: 'gjs-pn-btn',
-						command: "export-template",
-						active: false,
-						label: `<span uk-icon="code" uk-tooltip="title: Show Code; pos: bottom"></span>`
-					});
-				},
+				'customizeDevices',
+				'customizeOptions',
+				'customizeViews',
+				editor => {},
 			],
 			// Disable the storage manager for the moment
   			// storageManager: false,

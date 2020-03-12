@@ -50,6 +50,10 @@ function customCodeEditor(editor) {
 		run: function(editor, sender) {
 			const component = editor.getSelected();
 
+			// Make sure component is selected
+			if (component == undefined)
+				return;
+
 			if (modal.isOpen())
 				modal.close();
 

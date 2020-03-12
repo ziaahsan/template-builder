@@ -149,7 +149,7 @@ body {
 	text-decoration: none;
 }
 .gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
-	background-color: #0e151b;
+	background-color: #141e26;
 }
 .gjs-category-open, .gjs-sm-sector.gjs-sm-open, .gjs-sm-open.gjs-clm-tags, .gjs-block-category.gjs-open,
 .gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
@@ -202,8 +202,8 @@ body {
     /*box-shadow: 0 2px 6px #dddddd;*/
 }
 .gjs-radio-item input:checked+.gjs-radio-item-label {
-	background-color: #0e151b;
-	border-radius: 2px;
+	background-color: #141e26;
+	box-shadow: 0 4px 12px #0e151b inset;
 }
 .gjs-clm-tags {
 	border-bottom: 1px solid #1a2531;
@@ -248,6 +248,7 @@ body {
 	max-width: 1200px;
 	height: 800px;
 	border-radius: 6px;
+	box-shadow: 0px 0px 4px #0d131a;
 }
 .gjs-cm-editor-c .CodeMirror {
 	height: 650px;
