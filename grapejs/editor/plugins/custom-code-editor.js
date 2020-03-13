@@ -1,6 +1,9 @@
 function customCodeEditor(editor) {
 	const stylePrefix = editor.getConfig().stylePrefix;
 
+	// let code placeholder
+	let oldComponentCode = '';
+
 	// Div set up
 	let codeDivEditor = document.createElement('div');
 	codeDivEditor.setAttribute("class", "gjs-cm-editor-c");
@@ -45,7 +48,23 @@ function customCodeEditor(editor) {
 		indentUnit: 3
 	});
 
+	// Save code changes
+	btnSave.onclick = function() {
+		let htmlComponentCode = htmlCodeViewer.editor.getValue();
+		let htmlCode = editor.getHtml();
+
+		// find and replace it with the new component code
+		htmlCode = htmlCode.replace(oldComponentCode, htmlComponentCode);
+		
+		editor.DomComponents.getWrapper().set('content', '');
+		editor.setComponents(htmlCode.trim());
+
+		modal.close();
+	};
+
 	// Command for opening the edit
+	// @bug: When clicked saved changes new box does
+	// not show new changes upon clicking editting component again
 	command.add('edit-component-code', {
 		run: function(editor, sender) {
 			const component = editor.getSelected();
@@ -66,6 +85,12 @@ function customCodeEditor(editor) {
 			}
 
 			let htmlCode = component.toHTML();
+
+			// Set the current htmlCode of the component to old
+			// so we can compare old and replace with new
+			oldComponentCode = htmlCode;
+
+			// Now the set the component code
 			htmlCodeViewer.setContent(htmlCode);
 
 			modal.setTitle('Component Code');
@@ -95,7 +120,7 @@ function customCodeEditor(editor) {
 			component.addTrait({
 				name: 'tm-code-btn', // Name is how we ref the trait
 				type: 'button',
-				text: 'Edit <span style="border-bottom: 1px dotted #ddedfd;color: #ddedfd;">'+component.getName()+'</span> Code',
+				text: 'Edit <span style="border-bottom: 1px dotted #ddedfd;color: #ddedfd;">' + component.getName() + '</span> Code',
 				full: true, // Full width button
 				label: false,
 				command: 'edit-component-code'
@@ -104,7 +129,7 @@ function customCodeEditor(editor) {
 			});
 
 			// Component HTML
-			console.log(component.toHTML());
+			// console.log(component.toHTML());
 		}
 	});
 };
