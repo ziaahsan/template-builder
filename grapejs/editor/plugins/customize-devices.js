@@ -1,5 +1,5 @@
 function customizeDevices(editor) {
-	let panelManager = editor.Panels;
+	const panelManager = editor.Panels;
 
 	// Hide default devices
 	editor.getConfig().showDevices = 0;

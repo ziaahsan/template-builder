@@ -1,5 +1,5 @@
 function customizeViews(editor) {
-	let panelManager = editor.Panels;
+	const panelManager = editor.Panels;
 
 	// Views button manager
 	panelManager.getButton('views', 'open-sm').set({

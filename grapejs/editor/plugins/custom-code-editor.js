@@ -2,7 +2,7 @@ function customCodeEditor(editor) {
 	const stylePrefix = editor.getConfig().stylePrefix;
 
 	// let code placeholder
-	let oldComponentCode = '';
+	let selectedComponent = '';
 
 	// Div set up
 	let codeDivEditor = document.createElement('div');
@@ -20,13 +20,14 @@ function customCodeEditor(editor) {
 	codeDivHTML.setAttribute("id", "gjs-cm-code");
 
 	let btnSave = document.createElement('button');
-	btnSave.innerHTML = 'Save Changes';
-	btnSave.className = stylePrefix + 'btn-prim ' + stylePrefix + 'btn-import';
+	btnSave.innerHTML = 'Apply <span class="dotted-white-bottom-border">HTML</span> Changes';
+	btnSave.className = stylePrefix + 'btn-prim ' + stylePrefix + 'btn-import ' + stylePrefix + 'btn--full';
 
-	codeDivEditor.appendChild(codeDiv);
 	codeDiv.appendChild(codeDivTitle);
 	codeDiv.appendChild(codeDivHTML);
 	codeDiv.appendChild(btnSave);
+
+	codeDivEditor.appendChild(codeDiv);
 
 	const command = editor.Commands
 	const modal = editor.Modal;
@@ -50,28 +51,49 @@ function customCodeEditor(editor) {
 
 	// Save code changes
 	btnSave.onclick = function() {
+		// Get the new component code
 		let htmlComponentCode = htmlCodeViewer.editor.getValue();
-		let htmlCode = editor.getHtml();
 
-		// find and replace it with the new component code
-		htmlCode = htmlCode.replace(oldComponentCode, htmlComponentCode);
-		
-		editor.DomComponents.getWrapper().set('content', '');
-		editor.setComponents(htmlCode.trim());
+		// On the sleced component update the new htmlComponentCode
+		let replacedComponent = selectedComponent.replaceWith(htmlComponentCode.trim());
+		// Now select the replacedComponent
+		editor.select(replacedComponent);
 
+		// Make message
+		let msg = `
+	        <div class="uk-text-left uk-text-truncate uk-animation-slide-top-small">
+	        	<div class="uk-flex uk-flex-middle">
+					<span class="uk-margin-remove uk-text-small">
+						<span uk-icon="icon: check; ratio: 0.95;" uk-tooltip="title: Clear Canvas; pos: bottom"></span>
+						<span>You've updated <span class="dotted-white-bottom-border">${replacedComponent.getName()}</span> component.</span>
+					</span>
+				</div>
+			</div>
+		`;
+
+		// Send notification
+		UIkit.notification({
+			message: msg,
+			status: 'primary',
+			pos: 'bottom-right',
+			group: 'message',
+			timeout: 3000
+		});
+
+		// close popup
 		modal.close();
 	};
 
 	// Command for opening the edit
-	// @bug: When clicked saved changes new box does
-	// not show new changes upon clicking editting component again
 	command.add('edit-component-code', {
 		run: function(editor, sender) {
-			const component = editor.getSelected();
+			let component = editor.getSelected();
 
 			// Make sure component is selected
-			if (component == undefined)
+			if (component == undefined) {
+				console.log("Warnning: No component was selected when executing 'edit-component-code' command");
 				return;
+			}
 
 			if (modal.isOpen())
 				modal.close();
@@ -86,9 +108,9 @@ function customCodeEditor(editor) {
 
 			let htmlCode = component.toHTML();
 
-			// Set the current htmlCode of the component to old
+			// Set the current component of the component to selectedComponent
 			// so we can compare old and replace with new
-			oldComponentCode = htmlCode;
+			selectedComponent = component;
 
 			// Now the set the component code
 			htmlCodeViewer.setContent(htmlCode);
@@ -120,16 +142,13 @@ function customCodeEditor(editor) {
 			component.addTrait({
 				name: 'tm-code-btn', // Name is how we ref the trait
 				type: 'button',
-				text: 'Edit <span style="border-bottom: 1px dotted #ddedfd;color: #ddedfd;">' + component.getName() + '</span> Code',
+				text: 'Edit <span class="dotted-white-bottom-border">' + component.getName() + '</span> Code',
 				full: true, // Full width button
 				label: false,
 				command: 'edit-component-code'
 			}, {
 				at: 0
 			});
-
-			// Component HTML
-			// console.log(component.toHTML());
 		}
 	});
 };

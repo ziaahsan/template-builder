@@ -120,7 +120,7 @@ body {
     width: 14%;
     border-top: 1px solid #0e151b;
     border-left: 2px solid #0e151b;
-    box-shadow: -4px 0px 12px #0d131a;
+    box-shadow: -2px -4px 22px #0d131a
 }
 /*Active pannel button*/
 .gjs-pn-btn.gjs-pn-active {
@@ -287,12 +287,35 @@ body {
 }
 /*Button*/
 .gjs-btn-prim {
-    background-color: #1e87f0;
+    background-color: #198f78;
     border-radius: 4px;
-    color: hsla(0,0%,100%,.85)!important;
+    color: #ffffff;
     font-weight: 500;
     text-transform: none;
 }
 .gjs-btn-prim:active {
-	background-color: #0e6ecd;
+	background-color: #1c9d84;
 }
+
+
+.dotted-white-bottom-border {
+	border-bottom: 1px dotted #e2eaf0;
+}
+
+/*UIKit*/
+	/*Notifications*/
+	.uk-notification-message-primary {
+		color: #9fb8cd;
+	}
+	.uk-notification-message {
+		background-color: #141D26;
+	    border-radius: 4px;
+	    padding: 8px;
+	    font-size: 14px;
+	    color: #c1d1de;
+        box-shadow: 0px 2px 4px #0d131a;
+        border-left: 2px solid #33dbba;
+	}
+	.uk-notification-close {
+		top: 13px;
+	}
