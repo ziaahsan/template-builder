@@ -17,7 +17,7 @@ function customizeOptions(editor) {
 		        <div class="uk-text-left uk-text-truncate uk-animation-slide-top-small">
 		        	<div class="uk-flex uk-flex-middle">
 						<span class="uk-margin-remove uk-text-small">
-							<span uk-icon="icon: check; ratio: 0.95;" uk-tooltip="title: Clear Canvas; pos: bottom"></span>
+							<span uk-icon="icon: check; ratio: 0.95;"></span>
 							<span>You've cleared your canvas.</span>
 						</span>
 					</div>
@@ -66,7 +66,7 @@ function customizeOptions(editor) {
 	});
 
 	// Adding new button
-	editor.Panels.addButton('options', [{
+	panelManager.addButton('options', [{
 		id: 'clear-canvas',
 		className: 'gjs-pn-btn',
 		command: 'custom-clear-canvas',

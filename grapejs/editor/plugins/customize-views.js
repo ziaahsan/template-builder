@@ -30,7 +30,7 @@ function customizeViews(editor) {
 		attributes: {
 			title: "Open Layers"
 		},
-		label: `<span uk-icon="menu" uk-tooltip="title: Layers; pos: right"></span>`
+		label: `<span uk-icon="table" uk-tooltip="title: Layers; pos: right"></span>`
 	});
 	panelManager.getButton('views', 'open-blocks').set({
 		id: "open-blocks",
