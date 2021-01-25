@@ -22,6 +22,6 @@ git clone https://github.com/ziaahsan/template-builder
 ![alt text](https://github.com/ziaahsan/template-builder/blob/master/uploads/preview/sidebar.png)
 ![alt text](https://github.com/ziaahsan/template-builder/blob/master/uploads/preview/sidebar.gif)
 3. Preview
-![alt text](https://github.com/ziaahsan/template-builder/blob/master/uploads/preview/preview.png)
+![alt text](https://github.com/ziaahsan/template-builder/blob/master/uploads/preview/preview.gif)
 4. Trash & Component Code
 ![alt text](https://github.com/ziaahsan/template-builder/blob/master/uploads/preview/trash_and_component_code.gif)
